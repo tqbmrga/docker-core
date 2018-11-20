@@ -1,0 +1,19 @@
+# check : nodejs -v
+# check : yarn -v
+# check : npm -v
+
+sudo apt remove cmdtest
+sudo apt remove yarn
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt-get update && sudo apt-get install yarn
+
+yarn global add create-react-app
+create-react-app web
+
+docker build . -t gtl/web
+docker run -p 8080:80 gtl/web
+
+# check : http://localhost:8080/

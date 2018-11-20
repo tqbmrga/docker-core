@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:  
+   api-demo:
+    container_name: api-demo
+    build:
+      context: ./api-demo/
+      dockerfile: Dockerfile
+    networks:
+       - overlay
+    ports:
+      - target: 8080      # port in contaner
+        published: 82     # port in local
+        protocol: tcp     #
+        mode: ingress     #
+    volumes:         
+      - ./api-demo/demo/:/usr/src/app/demo
+    stdin_open: true
+    tty: true  
+  
+  # Database management in a single PHP file
+  # https://www.adminer.org/
+  # adminer:
+  #   image: adminer:latest
+  #   container_name: adminer
+  #   networks:
+  #      - overlay
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
+  
+networks:
+  overlay:
