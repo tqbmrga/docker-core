@@ -1,20 +1,20 @@
 version: '3.4'
 
 services:  
-   api-demo:
-    container_name: api-demo
+   core-nodejs-react:
+    container_name: core-nodejs-react
     build:
-      context: ./api-demo/
+      context: ./core-nodejs-react/
       dockerfile: Dockerfile
     networks:
        - overlay
     ports:
-      - target: 8080      # port in contaner
+      - target: 3000      # port in contaner
         published: 82     # port in local
         protocol: tcp     #
         mode: ingress     #
     volumes:         
-      - ./api-demo/demo/:/usr/src/app/demo
+      - ./core-nodejs-react/:/usr/src/app/
     stdin_open: true
     tty: true  
   

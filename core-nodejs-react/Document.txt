@@ -1,0 +1,7 @@
+npx create-react-app my-app
+cd my-app
+npm start
+
+npm install -> get node_modules
+coppy all move to docker container
+docker run
