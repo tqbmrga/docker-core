@@ -2,12 +2,10 @@
 FROM node:8
  
 # Who(m) to blame if nothing works
-MAINTAINER arvind.ravulavaru@gmail.com
+MAINTAINER tqb.mrga@gmail.com
  
 # Create a working directory 
 RUN mkdir -p /usr/src/app
-
-
  
 # Switch to working directory
 WORKDIR /usr/src/app
