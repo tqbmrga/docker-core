@@ -1,5 +1,5 @@
 
-# Docker support for Laravel Projects
+# Docker support for Laravel Projects & Mysql
 
 ## Clone laravel source
 ```bash
@@ -11,22 +11,22 @@ Download this gist into your project folder.
 
 ## Usage
 ```bash
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 ## Setup ENV & Composer Dependencies
 ```bash
 # copy .env
-$ docker-compose exec api cp -v .env.example .env
+docker-compose exec api cp -v .env.example .env
 
 # Composer Install
-$ docker-compose exec api composer install
+docker-compose exec api composer install
 
 # generate key
-$ docker-compose exec api php artisan key:generate
+docker-compose exec api php artisan key:generate
 
 # optimize
-$ docker-compose exec api php artisan cache:clear
+docker-compose exec api php artisan cache:clear
 ```
 
 ## Docker command
