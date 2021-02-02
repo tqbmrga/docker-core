@@ -34,14 +34,14 @@ docker-compose exec api php artisan cache:clear
 # Run a command in a running container
 docker exec -it [container ID] bash
 
-# Stop all container 
+# Stop all container
 docker stop $(docker ps -a -q)
 
 # Remove all container
-docker rm $(docker ps -a -q)
+docker rm $(docker ps -a -q) -f
 
 # Remove all imgaes
-docker rmi $(docker images -a -q)
+docker rmi $(docker images -a -q) -f
 
 # show list container
 docker ps -a
